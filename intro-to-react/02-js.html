@@ -21,8 +21,14 @@
 
         // const element = React.createElement('div', { className: 'container'}, 'Hello World', 'Goodbye World')
 
-        const element = <div className="container">Hello World</div>
-
+        const content = 'Hello World'
+        const myClassName = 'container'
+        const props = {
+            className: 'container',
+            children: 'Hello World' 
+        }
+        const element = <div {...props} className='my-class'/>
+        
         ReactDOM.render(element, rootElement)
         
         console.log(element)
