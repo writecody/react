@@ -9,7 +9,7 @@ function onChange(timestamp) {
 function App() {
   return (
     <div className="App">
-      <MyDatePicker onChange={onChange}/>MyDatePicker
+      <MyDatePicker onChange={onChange}/>
     </div>
   );
 }
