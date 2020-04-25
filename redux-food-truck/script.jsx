@@ -1,6 +1,8 @@
 // create store
 let orderCount = 0;
 
+let newOrder = false;
+
 // a root reducer
 const orderSide = (state, action) => {
   switch(action.type) {
@@ -36,7 +38,32 @@ const orderEntree = (state, action) => {
   }
 }
 
+const orderDrink = (state, action) => {
+  switch(action.type) {
+    case 'MAKE_SHAKE':
+      orderCount ++;
+      return {
+        orderNumber: orderCount,
+        guest: action.guestName,
+        price: action.itemPrice,
+        timeStamp: new Date(),
+        item: action.itemName,
+        notes: action.itemNotes, 
+      };
+      default: 
+        return state;
+  }
+};
+
 const orderHistory = (state = [], action) => {
+  setTimeout(function(){
+    console.log('orderHistory invoked: ', newOrder);
+      return newOrder = true;
+  }, 500);
+  setTimeout(function(){
+    console.log('1: ', 'newOrder: ', newOrder);
+      return newOrder = false;
+  }, 500);
   switch (action.type) {
     case 'MAKE_FRIES':
       console.log('At orderHistory');
@@ -45,6 +72,12 @@ const orderHistory = (state = [], action) => {
         orderSide(undefined, action)
       ];
       case 'MAKE_SALMON_BURGER':
+        console.log('At orderHistory');
+        return [
+          ...state,
+          orderEntree(undefined, action)
+        ];
+      case 'MAKE_SHAKE':
         console.log('At orderHistory');
         return [
           ...state,
@@ -65,7 +98,6 @@ const foodTruckApp = (state = {}, action) => {
 };
 
 // TODO: Display each new order in UI
-// TODO: drinks reducer
 
 const { createStore } = Redux;
 const store = createStore(foodTruckApp);
@@ -110,4 +142,6 @@ store.dispatch({
 });
 console.log('Current state: ', store.getState());
 console.log(orderHistory);
+
+console.log('End of File. ', 'newOrder:' , newOrder);
 
