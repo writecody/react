@@ -1,9 +1,9 @@
 // create store
 let orderCount = 0;
+console.log(`orderCount initialized: Order count = ${orderCount}` );
 
 let newOrder = false;
 
-// a root reducer
 const orderSide = (state, action) => {
   switch(action.type) {
     case 'MAKE_FRIES':
@@ -55,33 +55,34 @@ const orderDrink = (state, action) => {
   }
 };
 
-const orderHistory = (state = [], action) => {
-  setTimeout(function(){
-    console.log('orderHistory invoked: ', newOrder);
-      return newOrder = true;
-  }, 500);
-  setTimeout(function(){
-    console.log('1: ', 'newOrder: ', newOrder);
-      return newOrder = false;
-  }, 500);
+const orderHistoryRootReducer = (state = [], action) => {
   switch (action.type) {
     case 'MAKE_FRIES':
-      console.log('At orderHistory');
+      console.log("At orderHistoryRootReducer, 'MAKE_FRIES'");
+
       return [
         ...state,
         orderSide(undefined, action)
       ];
       case 'MAKE_SALMON_BURGER':
-        console.log('At orderHistory');
+        console.log("At orderHistoryRootReducer, 'MAKE_SALMON_BURGER'");
+
         return [
           ...state,
-          orderEntree(undefined, action)
+          orderEntree(undefined, action),
+          newOrder = false
         ];
       case 'MAKE_SHAKE':
-        console.log('At orderHistory');
+        console.log("At orderHistoryRootReducer, 'MAKE_SHAKE'");
+
+        console.log('orderHistoryRootReducer invoked: ', newOrder);
+
+        newOrder = true;
+
         return [
           ...state,
-          orderEntree(undefined, action)
+          orderEntree(undefined, action), 
+          newOrder = false
         ];
       default: 
       return state;
@@ -89,9 +90,10 @@ const orderHistory = (state = [], action) => {
 };
 
 const foodTruckApp = (state = {}, action) => {
+  console.log(`at foodTruckApp, which returns the root reducer: orderHistoryRootReducer = ${orderHistoryRootReducer}`);
   return {
-    orderHistory: orderHistory(
-      state.orderHistory,
+    orderHistoryRootReducerState: orderHistoryRootReducer(
+      state.orderHistoryRootReducerState,
       action
     )
   };
@@ -115,7 +117,6 @@ store.dispatch({
   itemNotes: '', 
 });
 console.log('Current state: ', store.getState());
-console.log(orderHistory);
 
 console.log('Dispatching MAKE_FRIES')
 store.dispatch({
@@ -128,7 +129,6 @@ store.dispatch({
   itemNotes: '', 
 });
 console.log('Current state: ', store.getState());
-console.log(orderHistory);
 
 console.log('Dispatching MAKE_SALMON_BURGER')
 store.dispatch({
@@ -141,7 +141,5 @@ store.dispatch({
   itemNotes: 'Extra aioli', 
 });
 console.log('Current state: ', store.getState());
-console.log(orderHistory);
 
-console.log('End of File. ', 'newOrder:' , newOrder);
 
