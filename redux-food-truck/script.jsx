@@ -15,7 +15,7 @@ const orderSide = (state, action) => {
         timeStamp: new Date(),
         item: action.itemName,
         notes: action.itemNotes, 
-      };
+      }, console.log(`orderCount:`, orderCount);
       default: 
         return state;
   }
@@ -32,7 +32,7 @@ const orderEntree = (state, action) => {
         timeStamp: new Date(),
         item: action.itemName,
         notes: action.itemNotes, 
-      };
+      }, console.log(`orderCount:`, orderCount);
       default: 
         return state;
   }
@@ -48,8 +48,8 @@ const orderDrink = (state, action) => {
         price: action.itemPrice,
         timeStamp: new Date(),
         item: action.itemName,
-        notes: action.itemNotes, 
-      };
+        notes: action.itemNotes,
+      }, console.log(`orderCount:`, orderCount);
       default: 
         return state;
   }
@@ -75,7 +75,7 @@ const orderHistoryRootReducer = (state = [], action) => {
       case 'MAKE_SHAKE':
         console.log("At orderHistoryRootReducer, 'MAKE_SHAKE'");
 
-        console.log('orderHistoryRootReducer invoked: ', newOrder);
+        console.log('newOrder: ', newOrder);
 
         newOrder = true;
 
@@ -90,7 +90,6 @@ const orderHistoryRootReducer = (state = [], action) => {
 };
 
 const foodTruckApp = (state = {}, action) => {
-  console.log(`at foodTruckApp, which returns the root reducer: orderHistoryRootReducer = ${orderHistoryRootReducer}`);
   return {
     orderHistoryRootReducerState: orderHistoryRootReducer(
       state.orderHistoryRootReducerState,
@@ -116,7 +115,6 @@ store.dispatch({
   itemName: 'Fries',
   itemNotes: '', 
 });
-console.log('Current state: ', store.getState());
 
 console.log('Dispatching MAKE_FRIES')
 store.dispatch({
@@ -128,7 +126,6 @@ store.dispatch({
   itemName: 'Fries',
   itemNotes: '', 
 });
-console.log('Current state: ', store.getState());
 
 console.log('Dispatching MAKE_SALMON_BURGER')
 store.dispatch({
@@ -140,6 +137,5 @@ store.dispatch({
   itemName: 'Salmon Burger',
   itemNotes: 'Extra aioli', 
 });
-console.log('Current state: ', store.getState());
 
 
