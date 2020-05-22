@@ -1,4 +1,19 @@
 .app-container {
+  background: #30475e;
+  display: grid;
+  grid-template-areas: 
+    "header header"
+    "main main ";
+  grid-template-columns: 33% 66%;
+  grid-template-rows: 17% 82%;
+  margin: auto;
   padding: 1rem 2rem;
 }
 
+.header {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+}

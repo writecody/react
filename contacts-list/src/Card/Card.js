@@ -8,24 +8,23 @@ const Card = ({ contacts, quotes }) => {
   const lowerCaseEmailAddress = (emailAddress) => {
     return emailAddress.toLowerCase();
   }
-  
+
   return (
-    <div>
-    <h1 class="list-title">Contact List</h1>
+    <div className="card-container">
     { 
-      contacts.map((contact) => (
-        <div class="card">
-          <div class="card-body">
+      contacts.map((contact, index) => (
+        <div className="card" key={index}>
+          <div className="card-body">
             <div className="title-line">
-              <h2 class="card-title">{contact.name}
+              <h2 className="card-title">{contact.name}
               </h2>
               <FaAddressCard className="address-card-icon" />
             </div>
-            <h3 class="card-subtitle">
+            <h3 className="card-subtitle">
               <FaEnvelope className="envelope-icon"/> 
               <Linkify>{lowerCaseEmailAddress(contact.email)}</Linkify>
             </h3>
-            <p class="card-text">
+            <p>
               {"Favorite quote: "} 
                 <span className="italic-text">{quotes.content}</span>
             </p>

@@ -1,17 +1,24 @@
 .address-card-icon {
   color: #30475e;
   font-size: 2rem;
+  padding: 0 1rem;
 }
 
 .card {
+  background: #ececec;
   border: 0.125rem solid #ececec;
   box-shadow: 0.125rem 0.125rem 0.115rem #c1a57b;
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 2rem;
   padding: 1rem 2rem;
+  transition: 500ms;
+  width: 33%;
 }
 
-.card-text {
-  font-size: 1.25rem;
+.card-container :active {
+  scale: 98%;
+  transition: 367ms;
 }
 
 .card-title {
@@ -20,40 +27,29 @@
   font-size: 1.5rem;
 }
 
-.card-body :active {
-  background: #c1a57b;
-}
-
 .card-subtitle {
   color: #30475e;
+  margin: 0;
 }
 
-/* 
-COLOR PALETTE:
-  dark: #222831;
-  med: #30475e;
-  gold: #c1a57b;
-  silver: #ececec;  
-  */
+.envelope-icon {
+  color: #c1a57b;
+  margin-right: 1.25rem;
+  vertical-align: middle;
+}
 
-  .envelope-icon {
-    color: #c1a57b;
-    margin-right: 1.25rem;
-    vertical-align: middle;
-  }
+.italic-text {
+  font-style: italic;
+}
 
-  .italic-text {
-    font-style: italic;
-  }
+.list-title {
+  color: #ececec;
+  font-size: 3rem;
+  text-shadow: 0.125rem 0.125rem 0.115rem #c1a57b;
+}
 
-  .list-title {
-    color: #222831;
-    font-size: 3rem;
-    text-shadow: 0.125rem 0.125rem 0.115rem #c1a57b;
-  }
-
-  .title-line {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+.title-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
