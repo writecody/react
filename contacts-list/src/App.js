@@ -22,7 +22,8 @@ class App extends Component {
       .then(quotesData => {
         this.setState({ quotes: quotesData })
       }
-    );
+      )
+      .then(console.log(this.state.quotes));
   }
 
   render () {
@@ -33,7 +34,6 @@ class App extends Component {
             <h1 className="list-title">Contact List</h1>
           </div>
           <div className="main">
-            MAIN
             <Card 
               contacts={this.state.contacts}
               quotes={this.state.quotes}>

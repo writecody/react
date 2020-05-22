@@ -24,16 +24,17 @@ const Card = ({ contacts, quotes }) => {
               <FaEnvelope className="envelope-icon"/> 
               <Linkify>{lowerCaseEmailAddress(contact.email)}</Linkify>
             </h3>
-            <p>
-              {"Favorite quote: "} 
-                <span className="italic-text">{quotes.content}</span>
-            </p>
+          <p>
+            {"Favorite quote: "} 
+            <span key="index" className="italic-text">PLACEHOLDER</span>
+            {/* <span key="index" className="italic-text">{quote.content}</span> */}
+          </p>
           </div>
         </div>
       ))
-    };
-      </div>
-      );
-    };
-    
-    export default Card;
+    };     
+    </div>
+  );
+}
+
+export default Card;
