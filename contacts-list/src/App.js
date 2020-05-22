@@ -5,7 +5,8 @@ import '../src/App.css'
 class App extends Component {
 
   state = {
-    contacts: []
+    contacts: [],
+    quotes: []
   }
 
   componentDidMount() {
@@ -15,13 +16,23 @@ class App extends Component {
         this.setState({ contacts: data })
       })
       .catch(console.log);
+
+    fetch('https://api.quotable.io/random')
+      .then(response => response.json())
+      .then(quotesData => {
+        this.setState({ quotes: quotesData })
+        // this.setState(`${data.content} -${data.author}`)
+  })
   }
 
   render () {
     return (
       <>
         <div className="app-container">
-          <Card contacts={this.state.contacts}></Card>
+          <Card 
+            contacts={this.state.contacts}
+            quotes={this.state.quotes}>
+          </Card>
         </div>
       </>
     );

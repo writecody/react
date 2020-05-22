@@ -1,20 +1,23 @@
-.list-title {
-  color: #222831;
-  font-size: 3rem;
-  text-shadow: 0.125rem 0.125rem 0.115rem #c1a57b;
+.address-card-icon {
+  color: #30475e;
+  font-size: 2rem;
 }
 
 .card {
-  border: 0.125rem solid #30475e;
+  border: 0.125rem solid #ececec;
   box-shadow: 0.125rem 0.125rem 0.115rem #c1a57b;
   margin-bottom: 2rem;
-  padding: 1rem;
+  padding: 1rem 2rem;
+}
+
+.card-text {
+  font-size: 1.25rem;
 }
 
 .card-title {
-  background: #ececec;
+  /* background: #; */
   color: #222831;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .card-body :active {
@@ -24,9 +27,33 @@
 .card-subtitle {
   color: #30475e;
 }
+
 /* 
 COLOR PALETTE:
   dark: #222831;
   med: #30475e;
   gold: #c1a57b;
-  silver: #ececec;  */
+  silver: #ececec;  
+  */
+
+  .envelope-icon {
+    color: #c1a57b;
+    margin-right: 1.25rem;
+    vertical-align: middle;
+  }
+
+  .italic-text {
+    font-style: italic;
+  }
+
+  .list-title {
+    color: #222831;
+    font-size: 3rem;
+    text-shadow: 0.125rem 0.125rem 0.115rem #c1a57b;
+  }
+
+  .title-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
