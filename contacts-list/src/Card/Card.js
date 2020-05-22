@@ -4,6 +4,11 @@ import { FaAddressCard, FaEnvelope } from 'react-icons/fa';
 import Linkify from 'react-linkify';
 
 const Card = ({ contacts, quotes }) => {
+
+  const lowerCaseEmailAddress = (emailAddress) => {
+    return emailAddress.toLowerCase();
+  }
+  
   return (
     <div>
     <h1 class="list-title">Contact List</h1>
@@ -18,7 +23,7 @@ const Card = ({ contacts, quotes }) => {
             </div>
             <h3 class="card-subtitle">
               <FaEnvelope className="envelope-icon"/> 
-              <Linkify>{contact.email}</Linkify>
+              <Linkify>{lowerCaseEmailAddress(contact.email)}</Linkify>
             </h3>
             <p class="card-text">
               {"Favorite quote: "} 

@@ -21,7 +21,6 @@ class App extends Component {
       .then(response => response.json())
       .then(quotesData => {
         this.setState({ quotes: quotesData })
-        // this.setState(`${data.content} -${data.author}`)
   })
   }
 
