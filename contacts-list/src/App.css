@@ -2,9 +2,9 @@
   background: #30475e;
   display: grid;
   grid-template-areas: 
-    "header header"
-    "main main ";
-  grid-template-columns: 33% 66%;
+    "header header header"
+    "contacts main main";
+  grid-template-columns: 1fr 1fr 17.5%;
   grid-template-rows: 17% 82%;
   margin: auto;
   padding: 1rem 2rem;
@@ -16,4 +16,8 @@
 
 .main {
   grid-area: main;
+}
+
+.contacts {
+  grid-area: contacts;
 }

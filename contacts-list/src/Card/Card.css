@@ -13,12 +13,17 @@
   margin-bottom: 2rem;
   padding: 1rem 2rem;
   transition: 500ms;
-  width: 33%;
+  grid-column: 0 / 1;
 }
+
+/* .card-container {
+  /* display: grid; */
+  /* grid-area: 1 / 0 / 2 / 1; */
+/* } */ 
 
 .card-container :active {
   scale: 98%;
-  transition: 367ms;
+  transition: 100ms;
 }
 
 .card-title {
