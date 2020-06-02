@@ -13,22 +13,24 @@ const Card = ({ contacts }) => {
     <div className="card-container">
       { 
         contacts.map((contact, index) => (
-          <div className="card" key={index}>
-            <div className="card-body">
-              <div className="title-line">
-                <h2 className="card-title">{contact.name}
-                </h2>
-                <FaAddressCard className="address-card-icon" />
-              </div>
-              <h3 className="card-subtitle">
-                <FaEnvelope className="envelope-icon"/> 
-                <Linkify>{lowerCaseEmailAddress(contact.email)}</Linkify>
-              </h3>
-          </div>
-            <p className="company-name">
-              {contact.company.name}
-            </p>
-          </div>
+          contact && contact.name != null ? (
+            <div className="card" key={index}>
+              <div className="card-body">
+                <div className="title-line">
+                  <h2 className="card-title">{contact.name}
+                  </h2>
+                  <FaAddressCard className="address-card-icon" />
+                </div>
+                <h3 className="card-subtitle">
+                  <FaEnvelope className="envelope-icon"/> 
+                  <Linkify>{lowerCaseEmailAddress(contact.email)}</Linkify>
+                </h3>
+            </div>
+              <p className="company-name">
+                {contact.company.name}
+              </p>
+            </div>
+          ) : null
         ))
       };  
   </div>

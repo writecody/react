@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import Card from '../src/Card/Card';
+import Companies from '../src/Companies/Companies';
 import '../src/App.css'
 
 class App extends Component {
   
   state = {
-    contacts: []
+    contacts: [],
+    companies: []
   }
   
   componentDidMount() {
@@ -13,6 +15,20 @@ class App extends Component {
     .then(res => res.json())
     .then((data) => {
       this.setState({ contacts: data })
+    })
+    .catch(console.log);
+
+    fetch("https://crunchbase-crunchbase-v1.p.rapidapi.com/odm-organizations", {
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-host": "crunchbase-crunchbase-v1.p.rapidapi.com",
+        "x-rapidapi-key": "0c5f3edcf0msh770d4bc9a6f16cdp10d95ejsndfaaa9fc67a8"
+      }
+    })
+    .then(res => res.json())
+    .then((data) => {
+      console.log(data)
+      this.setState({ companies: data.data.items })
     })
     .catch(console.log);
   }
@@ -30,7 +46,9 @@ class App extends Component {
             </Card>
           </div>
           <div className="main">
-            MAIN CONTENT
+            <div className="company-list">
+              <Companies companies={this.state.companies}></Companies>
+            </div>
           </div>
         </div>
       </>
