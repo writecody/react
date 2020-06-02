@@ -8,18 +8,15 @@
   background: #ececec;
   border: 0.125rem solid #ececec;
   box-shadow: 0.125rem 0.125rem 0.115rem #c1a57b;
-  display: flex;
   justify-content: space-between;
   margin-bottom: 2rem;
   padding: 1rem 2rem;
-  transition: 500ms;
-  grid-column: 0 / 1;
+  transition: 100ms;
 }
 
-/* .card-container {
-  /* display: grid; */
-  /* grid-area: 1 / 0 / 2 / 1; */
-/* } */ 
+.card-body {
+  margin: 0;
+}
 
 .card-container :active {
   scale: 98%;
@@ -29,11 +26,18 @@
 .card-title {
   color: #222831;
   font-size: 1.5rem;
+  margin: 0 0 1rem;
 }
 
 .card-subtitle {
   color: #30475e;
+  display: flex;
+  align-content: center;
   margin: 0;
+}
+
+.company-name {
+  margin: 1rem 0 0;
 }
 
 .envelope-icon {
@@ -54,6 +58,5 @@
 
 .title-line {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }

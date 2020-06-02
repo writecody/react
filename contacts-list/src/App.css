@@ -15,7 +15,9 @@
 }
 
 .main {
+  background: white;
   grid-area: main;
+  margin-left: 2rem;
 }
 
 .contacts {
