@@ -27,7 +27,6 @@ class App extends Component {
     })
     .then(res => res.json())
     .then((data) => {
-      console.log(data)
       this.setState({ companies: data.data.items })
     })
     .catch(console.log);

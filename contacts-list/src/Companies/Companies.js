@@ -2,7 +2,6 @@ import React from 'react';
 import '../Companies/Companies.css';
 import Linkify from 'react-linkify';
 
-
 const Companies = ({ companies }) => {
   
   return (
@@ -20,6 +19,7 @@ const Companies = ({ companies }) => {
             ))
         }
       </ul>
+    
     </>
   )
 }
