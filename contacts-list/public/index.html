@@ -22,12 +22,59 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <script type="text/javascript">
-      let dataset = [ 5, 25, 49, 120 ];
+      let dataset = [ 142, 202 ];
 
-      d3
-        .select("body") // select the DOM element to append to; you can also give it a CSS selector to find the first element in the DOM that matches // .selectAll('<element> / <CSS selector>') can also be used
-        .append("p") // creates the DOM element you specify and appends it to the end of what you selected
-        .text("New Paragraph!"); // .text() takes a string and inserts it between the opening and closing tag of whatever you selected; if there is existing content, that will be overwritten
+      const poorOutcomeLine = 5;
+
+      const goodOutcomeLine = 495;
+
+      const bottomMarginValue = 20;
+      
+      var svg = d3.select("body") 
+      .append("svg")
+      .attr("width", "90%")
+      .attr("height", "25rem")
+      .attr("margin-left", "2rem" )
+      .style("border", "2px solid gray");
+      
+      svg.selectAll("rect")
+        .data(dataset)
+        .enter()
+        .append("rect")
+        .attr("class", "bar")
+        .attr("x", function(dataItem, index) {
+          return poorOutcomeLine + dataItem
+        })
+        .attr("y", function(dataItem, index) {
+          return dataItem + bottomMarginValue
+        })
+        .attr("width", function(dataItem) { return dataItem} )
+        .attr("height", 40
+        );
+      // select the DOM element to append to; you can also give it a CSS selector to find the first element in the DOM that matches // .selectAll('<element> / <CSS selector>') can also be used
+        
+        // .selectAll("div")
+        // .data(dataset)
+        // .enter()
+        
+        // creates the DOM element you specify and appends it to the end of what you selected
+        
+        // .text(function(dataItem) { // this anonymous function executes on each item in the dataset
+          // return dataItem; 
+        // }) 
+        // .text() takes a string and inserts it between the opening and closing tag of whatever you selected; if there is existing content, that will be overwritten
+        // dataItem (arbitrary name) above is set to the corresponding value in your original dataset, for the current element--the value of the current element changes over time as D3 loops through each element in the dataset
+        // .style("color", function(d) {
+        //   if (d > 50) {
+        //     return "blue";
+        //   } else {
+        //     return "green";
+        //   }
+        // })
+        // .attr("class", "bar")
+        // .style("height", function(dataItem) {
+        //   return dataItem + "px"
+        // })
     </script>
     <div id="root"></div>
   </body>
