@@ -1,7 +1,9 @@
 .footer {
-  background: lightsalmon;
+  background: #143B59;
+  color: #F7E6EA;
   grid-row-start: 3;
   grid-row-end: 4;
   grid-column-start: 2;
   grid-column-end: 4;
+  padding: 1rem;
 }

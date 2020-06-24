@@ -1,7 +1,9 @@
 .sidebar {
-  background: lightgoldenrodyellow;
+  background: #B2FEC5;
+  color: #143B59;  
   grid-row-start: 2;
   grid-row-end: 3;
   grid-column-start: 3;
   grid-column-end: 4;
+  padding: 1rem;
 }

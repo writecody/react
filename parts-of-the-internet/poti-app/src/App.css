@@ -6,4 +6,8 @@
   grid-column-gap: 0.125rem;
   grid-row-gap: 0.125rem;
   height: 100vh;
+  font-family: 'Roboto Mono', sans-serif;
 }
+
+/* .code {
+} */

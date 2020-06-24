@@ -1,7 +1,10 @@
 .article {
-  background: lightgray;
+  background: #F7E6EA;
+  color: #143B59;
   grid-column-start: 2;
   grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 3;
+  padding: 1rem;
+
 }

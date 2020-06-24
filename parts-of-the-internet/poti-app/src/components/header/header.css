@@ -1,5 +1,6 @@
 .header {
-  background: white;
+  background: #143B59;
+  color: #B2FEC5;
   grid-column-start: 1;
   grid-column-end: 4;
   grid-row-start: 1;
