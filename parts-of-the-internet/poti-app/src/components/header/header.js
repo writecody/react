@@ -9,6 +9,7 @@ function Header () {
     <div className="header">
       <h1>{pageTitle}</h1>
       <input
+        className="text-input"
         type="text"
         value={pageTitle}
         onChange={event => setPageTitle(event.target.value)}
