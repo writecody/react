@@ -1,0 +1,13 @@
+body {
+  border: 1px solid;
+  font-family: 'Cabin', sans-serif;
+  height: 100vh;
+  margin: auto;
+  padding: 48px 96px 0;
+}
+
+html {
+  font-size: 24px;
+}
+
+
