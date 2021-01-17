@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 export const Box: React.FC = () => {
-  const [colorValue, setColorValue] = useState('#fff')
-
-  useEffect(() => {
-    const getColorValue = (): string => {
-      const newValue = 'red'
-      setColorValue(newValue)
-      return colorValue
+  const getColor = (min = 0, max = 9) => {
+    const hexValueArray = []
+    for(let i = 1; i <= 7; i++){
+      let low = Math.ceil(min)
+      let high = Math.floor(max)
+      hexValueArray.push(Math.floor(Math.random() * high - low + 1) + low)
     }
-    getColorValue()
-    return
-  }, [colorValue])
+    hexValueArray[0] = '#'
+    return hexValueArray.join('')
+  }
 
   return (
-    <div style={{ background: colorValue, height: '25%', width: '20%', border: '1px solid' }}>Box</div>
+    <div style={{background: getColor(), height: '25%', width: '16%', border: '1px solid'}}>{getColor()}</div>
   )
 }
