@@ -13,6 +13,6 @@ export const Box: React.FC = () => {
   }
 
   return (
-    <div style={{background: getColor(), height: '25%', width: '16%', border: '1px solid'}}>{getColor()}</div>
+    <div style={{background: getColor(), height: '25%', width: '16%'}}></div>
   )
 }
